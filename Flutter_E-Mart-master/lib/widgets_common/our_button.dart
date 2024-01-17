@@ -1,7 +1,7 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:flutter/material.dart';
 
-Widget ourButton() {
+Widget ourButton({onPress , color, textColor, title}) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
       primary: redColor,
