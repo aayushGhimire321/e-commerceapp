@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: TextButton(onPressed: (){}, child: forgetPass.text.make())),
               5.heightBox,
-              ourButton().box.width(context.screenWidth).make(),
+              ourButton().box.width(context.screenWidth - 50).make(),
             ],
           ).box.white.rounded.padding(EdgeInsets.all(16)).width(context.screenWidth - 70).make(),
         ],
