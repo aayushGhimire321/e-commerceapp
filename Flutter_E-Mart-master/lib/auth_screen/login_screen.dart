@@ -1,6 +1,7 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:emart_app/widgets_common/applogo_widget.dart';
 import 'package:emart_app/widgets_common/custom_textfield.dart';
+import 'package:emart_app/widgets_common/our_button.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets_common/bg_widget.dart';
@@ -27,7 +28,9 @@ class LoginScreen extends StatelessWidget {
               customTextField(hint: passwordHint, title: password),
               Align(
                   alignment: Alignment.centerRight,
-                  child: TextButton(onPressed: (){}, child: forgetPass.text.make()))
+                  child: TextButton(onPressed: (){}, child: forgetPass.text.make())),
+              5.heightBox,
+              ourButton(),
             ],
           ).box.white.rounded.padding(EdgeInsets.all(16)).width(context.screenWidth - 70).make(),
         ],

@@ -3,5 +3,11 @@ import 'package:flutter/material.dart';
 
 Widget ourButton() {
   return ElevatedButton(
-      onPressed: () {}, child: login.text.white.fontFamily(bold).make());
+    style: ElevatedButton.styleFrom(
+      primary: redColor,
+      padding: const EdgeInsets.all(12),
+    ),
+    onPressed: () {},
+    child: login.text.white.fontFamily(bold).make(),
+  );
 }
