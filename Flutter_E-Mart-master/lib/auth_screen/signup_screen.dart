@@ -1,5 +1,6 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../consts/lists.dart';
 import '../widgets_common/applogo_widget.dart';
@@ -83,6 +84,29 @@ class SignupScreen extends StatelessWidget {
                     .box
                     .width(context.screenWidth - 50)
                     .make(),
+                10.heightBox,
+                //wrapping into gesture detecotr of velocity x
+                RichText(text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text: alreadyHaveAccount,
+                      style: TextStyle(
+                        fontFamily: bold,
+                        color: fontGrey,
+                      ),
+                    ),
+                    TextSpan(
+                      text: login,
+                      style: TextStyle(
+                        fontFamily: bold,
+                        color: redColor,
+                      ),
+                    ),
+                  ],
+                ),
+                ).onTap(() {
+                  Get.back();
+                }),
               ],
             )
                 .box
