@@ -1,7 +1,12 @@
 import 'package:emart_app/consts/consts.dart';
+import 'package:emart_app/views/cart_screen/cart_screen.dart';
 import 'package:emart_app/views/controllers/home_controller.dart';
+import 'package:emart_app/views/home_screen/home_screen.dart';
+import 'package:emart_app/views/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../category_screen/category_screen.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -23,23 +28,30 @@ class Home extends StatelessWidget {
     ];
 
     var navBody = [
-      Container(color: Colors.blue),
-      Container(color: Colors.amber),
-      Container(color: Colors.purple),
-      Container(color: Colors.cyan),
+      const HomeScreen(),
+      const CategoryScreen(),
+      const CartScreen(),
+      const ProfileScreen(),
     ];
 
     return Scaffold(
-      body: Container(),
+      body: Column(
+        children: [
+          Obx(
+            () => Expanded(
+                child: navBody.elementAt(controller.currentNavIndex.value)),
+          ),
+        ],
+      ),
       bottomNavigationBar: Obx(
-            () => BottomNavigationBar(
+        () => BottomNavigationBar(
           currentIndex: controller.currentNavIndex.value,
           selectedItemColor: redColor,
           selectedLabelStyle: const TextStyle(fontFamily: semibold),
           type: BottomNavigationBarType.fixed,
           backgroundColor: whiteColor,
           items: navbarItem,
-          onTap: (value){
+          onTap: (value) {
             controller.currentNavIndex.value = value;
           },
         ),
