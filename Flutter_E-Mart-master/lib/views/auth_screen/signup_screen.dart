@@ -7,8 +7,6 @@ import '../../widgets_common/bg_widget.dart';
 import '../../widgets_common/custom_textfield.dart';
 import '../../widgets_common/our_button.dart';
 
-
-
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
@@ -47,10 +45,9 @@ class _SignupScreenState extends State<SignupScreen> {
                       checkColor: redColor,
                       value: isCheck,
                       onChanged: (newValue) {
-                        setState((){
+                        setState(() {
                           isCheck = newValue;
                         });
-
                       },
                     ),
                     10.widthBox,
@@ -89,7 +86,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 5.heightBox,
                 ourButton(
-                        color: isCheck==true? redColor : lightGrey,
+                        color: isCheck == true ? redColor : lightGrey,
                         title: signup,
                         textColor: whiteColor,
                         onPress: () {})
