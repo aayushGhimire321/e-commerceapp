@@ -3,8 +3,8 @@ import 'package:emart_app/views/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Container(),
       bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
+            () => BottomNavigationBar(
           currentIndex: controller.currentNavIndex.value,
           selectedItemColor: redColor,
           selectedLabelStyle: const TextStyle(fontFamily: semibold),
