@@ -1,11 +1,16 @@
 import 'package:emart_app/consts/consts.dart';
+import 'package:emart_app/views/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    //init home Controller
+    var controller = Get.put(HomeController());
+
     var navbarItem = [
       BottomNavigationBarItem(
           icon: Image.asset(icHome, width: 26), label: home),
@@ -17,14 +22,27 @@ class HomeScreen extends StatelessWidget {
           icon: Image.asset(icProfile, width: 26), label: account)
     ];
 
+    var navBody = [
+      Container(color: Colors.blue),
+      Container(color: Colors.amber),
+      Container(color: Colors.purple),
+      Container(color: Colors.cyan),
+    ];
+
     return Scaffold(
       body: Container(),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: redColor,
-        selectedLabelStyle: const TextStyle(fontFamily: semibold),
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: whiteColor,
-        items: navbarItem,
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+          currentIndex: controller.currentNavIndex.value,
+          selectedItemColor: redColor,
+          selectedLabelStyle: const TextStyle(fontFamily: semibold),
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: whiteColor,
+          items: navbarItem,
+          onTap: (value){
+            controller.currentNavIndex.value = value;
+          },
+        ),
       ),
     );
   }
