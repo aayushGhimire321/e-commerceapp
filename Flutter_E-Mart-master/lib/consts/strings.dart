@@ -33,6 +33,7 @@ const searchanything = "Search anything....",
     womenDress = "Women Dress",
     girlsWatches = "Grils Watches",
     mobilePhone = "Mobile Phone",
+    boysGlasses = "Boys Glasses",
     tShirts = "TShirts",
     girlsDress = "Girls Dress",
     featuredCategories = "Featured Categories";
