@@ -1,4 +1,5 @@
 import 'package:emart_app/consts/consts.dart';
+import 'package:emart_app/views/home_screen/components/featured_button.dart';
 import 'package:emart_app/widgets_common/home_buttons.dart';
 import 'package:flutter/material.dart';
 
@@ -120,11 +121,19 @@ class HomeScreen extends StatelessWidget {
                             .fontFamily(semibold)
                             .make()),
                     20.heightBox,
-                    Row(
-                      children: List.generate(3,(index)=>Column(
-                        children: [],
-                      )
-                      ).toList(),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                            3,
+                            (index) => Column(
+                                  children: [
+                                    featuredButton(),
+                                    10.heightBox,
+                                    featuredButton(),
+                                  ],
+                                )).toList(),
+                      ),
                     ),
                   ],
                 ),
