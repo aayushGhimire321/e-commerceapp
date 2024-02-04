@@ -1,6 +1,7 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:flutter/material.dart';
 
+import '../../consts/lists.dart';
 import '../../widgets_common/bg_widget.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -26,7 +27,11 @@ class CategoryScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
-                        Image.asset(name)
+                        Image.asset(categoryImages[index],
+                          height: 120,
+                          width: 200,
+                          fit: BoxFit.cover,
+                        )
                       ],
                     ).box.white.rounded.clip(Clip.antiAlias).outerShadowSm.make();
                   }),
