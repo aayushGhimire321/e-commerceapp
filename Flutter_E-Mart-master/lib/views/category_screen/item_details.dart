@@ -108,6 +108,7 @@ class ItemDetails extends StatelessWidget {
                       .make(),
 
                   //color Section
+                  20.heightBox,
                   Column(
                     children: [
                       Row(
@@ -115,7 +116,59 @@ class ItemDetails extends StatelessWidget {
                           SizedBox(
                             width: 100,
                             child: "Color: ".text.color(textfieldGrey).make(),
-                          )
+                          ),
+                          Row(
+                            children: List.generate(
+                              3,
+                              (index) => VxBox()
+                                  .size(40, 40)
+                                  .roundedFull
+                                  .color(Vx.randomPrimaryColor)
+                                  .margin(
+                                      const EdgeInsets.symmetric(horizontal: 4))
+                                  .make(),
+                            ),
+                          ),
+                        ],
+                      ).box.padding(const EdgeInsets.all(8)).make(),
+
+                      //quantity row
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            child: "Quantity: ".text.color(textfieldGrey).make(),
+                          ),
+                          Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.remove)),
+                              "0"
+                                  .text
+                                  .size(16)
+                                  .color(darkFontGrey)
+                                  .fontFamily(bold)
+                                  .make(),
+                              IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.add)),
+
+                              10.widthBox,
+                              "(0 available)".text.color(textfieldGrey).make(),
+                            ],
+                          ),
+                        ],
+                      ).box.padding(const EdgeInsets.all(8)).make(),
+
+                      //total row
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            child: "Total: ".text.color(textfieldGrey).make(),
+                          ),
+                          "\$0.00".text.color(redColor).size(16).fontFamily(bold).make(),
                         ],
                       ).box.padding(const EdgeInsets.all(8)).make(),
                     ],
