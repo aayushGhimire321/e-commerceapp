@@ -16,7 +16,7 @@ const loginWith = "Log in with";
 const privacyPolicy = "Privacy Policy";
 const termAndCond = "Terms and Conditions";
 const alreadyHaveAccount = "Already have an Account? ";
-
+const logout = "Log Out";
 //home strings
 const home = "Home",
     categories = "Categories",
@@ -55,6 +55,6 @@ const womenClothing = "Women Clothing",
 const video = "Video",
     reviews = "Reviews",
     sellerpolicy = "Seller Policy",
-    returnpolicy = "Return POlicy",
+    returnpolicy = "Return Policy",
     supportPolicy = "Support Policy",
     productsyoumaylike = "Products you may also like";
