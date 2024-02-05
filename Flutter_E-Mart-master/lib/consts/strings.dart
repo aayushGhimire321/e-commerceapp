@@ -39,7 +39,6 @@ const searchanything = "Search anything....",
     featuredProduct = "Featured Product",
     featuredCategories = "Featured Categories";
 
-
 //categories Strings
 
 const womenClothing = "Women Clothing",
@@ -53,8 +52,9 @@ const womenClothing = "Women Clothing",
     furniture = "Furniture";
 
 //item details strings
-const video ="Video",
-    reviews="Reviews",
-    sellerpolicy="Seller Policy",
-    returnpolicy="Return POlicy",
-    supportPolicy="Support Policy";
+const video = "Video",
+    reviews = "Reviews",
+    sellerpolicy = "Seller Policy",
+    returnpolicy = "Return POlicy",
+    supportPolicy = "Support Policy",
+    productsyoumaylike = "Products you may also like";

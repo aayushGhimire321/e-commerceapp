@@ -1,4 +1,5 @@
 import 'package:emart_app/consts/consts.dart';
+import 'package:emart_app/consts/lists.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -137,7 +138,8 @@ class ItemDetails extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: 100,
-                            child: "Quantity: ".text.color(textfieldGrey).make(),
+                            child:
+                                "Quantity: ".text.color(textfieldGrey).make(),
                           ),
                           Row(
                             children: [
@@ -153,7 +155,6 @@ class ItemDetails extends StatelessWidget {
                               IconButton(
                                   onPressed: () {},
                                   icon: const Icon(Icons.add)),
-
                               10.widthBox,
                               "(0 available)".text.color(textfieldGrey).make(),
                             ],
@@ -168,7 +169,12 @@ class ItemDetails extends StatelessWidget {
                             width: 100,
                             child: "Total: ".text.color(textfieldGrey).make(),
                           ),
-                          "\$0.00".text.color(redColor).size(16).fontFamily(bold).make(),
+                          "\$0.00"
+                              .text
+                              .color(redColor)
+                              .size(16)
+                              .fontFamily(bold)
+                              .make(),
                         ],
                       ).box.padding(const EdgeInsets.all(8)).make(),
                     ],
@@ -176,18 +182,78 @@ class ItemDetails extends StatelessWidget {
 
                   //description
                   10.heightBox,
-                  "Description".text.color(darkFontGrey).fontFamily(semibold).make(),
+                  "Description"
+                      .text
+                      .color(darkFontGrey)
+                      .fontFamily(semibold)
+                      .make(),
                   10.heightBox,
-                  "This is a dummy item and dummy Description here...continue adding the description".text.color(darkFontGrey).make(),
+                  "This is a dummy item and dummy Description here...continue adding the description"
+                      .text
+                      .color(darkFontGrey)
+                      .make(),
 
                   //buttons sections
+                  10.heightBox,
                   ListView(
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    children: List.generate(5, (index) => ListTile(
-                      title: "Video".text.fontFamily(semibold).color(darkFontGrey).make(),
-                      trailing: const Icon(Icons.arrow_forward),
-                    )),
+                    children: List.generate(
+                        itemDetailButtonsList.length,
+                        (index) => ListTile(
+                              title: itemDetailButtonsList[index]
+                                  .text
+                                  .fontFamily(semibold)
+                                  .color(darkFontGrey)
+                                  .make(),
+                              trailing: const Icon(Icons.arrow_forward),
+                            ),
+                    ),
                   ),
+
+                  20.heightBox,
+                  
+                  //products may like section 
+                  productsyoumaylike.text.fontFamily(bold).size(16).color(darkFontGrey).make(),
+
+                  10.heightBox,
+                  //copied this widget from home screen featured products
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                          6,
+                              (index) => Column(
+                            crossAxisAlignment:
+                            CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(imgP1,
+                                  width: 150, fit: BoxFit.cover),
+                              10.heightBox,
+                              "Laptop 4GB/64GB"
+                                  .text
+                                  .fontFamily(semibold)
+                                  .color(darkFontGrey)
+                                  .make(),
+                              10.heightBox,
+                              "\$600"
+                                  .text
+                                  .color(redColor)
+                                  .fontFamily(bold)
+                                  .size(16)
+                                  .make()
+                            ],
+                          )
+                              .box
+                              .white
+                              .margin(const EdgeInsets.symmetric(
+                              horizontal: 4))
+                              .roundedSM
+                              .padding(const EdgeInsets.all(8))
+                              .make()),
+                    ),
+                  ),
+                  
                 ],
               ),
             ),
