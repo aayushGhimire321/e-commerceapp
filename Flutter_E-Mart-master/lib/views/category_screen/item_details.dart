@@ -35,6 +35,7 @@ class ItemDetails extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //swiper section
                   VxSwiper.builder(
@@ -59,7 +60,66 @@ class ItemDetails extends StatelessWidget {
                       .make(),
 
                   10.heightBox,
+                  //rating
+                  VxRating(
+                      onRatingUpdate: (value) {},
+                      normalColor: textfieldGrey,
+                      selectionColor: golden,
+                      count: 5,
+                      size: 25,
+                      stepInt: true),
 
+                  10.heightBox,
+                  "\$30,000"
+                      .text
+                      .color(redColor)
+                      .fontFamily(bold)
+                      .size(18)
+                      .make(),
+
+                  10.heightBox,
+                  Row(
+                    children: [
+                      Expanded(
+                          child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          "Seller".text.white.fontFamily(semibold).make(),
+                          5.heightBox,
+                          "In House Brands"
+                              .text
+                              .fontFamily(semibold)
+                              .color(darkFontGrey)
+                              .size(16)
+                              .make(),
+                        ],
+                      )),
+                      const CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Icon(Icons.message_rounded, color: darkFontGrey),
+                      ),
+                    ],
+                  )
+                      .box
+                      .height(60)
+                      .padding(const EdgeInsets.symmetric(horizontal: 16))
+                      .color(textfieldGrey)
+                      .make(),
+
+                  //color Section
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            child: "Color: ".text.color(textfieldGrey).make(),
+                          )
+                        ],
+                      ).box.padding(const EdgeInsets.all(8)).make(),
+                    ],
+                  ).box.white.shadowSm.make(),
                 ],
               ),
             ),
