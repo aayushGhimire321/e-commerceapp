@@ -173,6 +173,21 @@ class ItemDetails extends StatelessWidget {
                       ).box.padding(const EdgeInsets.all(8)).make(),
                     ],
                   ).box.white.shadowSm.make(),
+
+                  //description
+                  10.heightBox,
+                  "Description".text.color(darkFontGrey).fontFamily(semibold).make(),
+                  10.heightBox,
+                  "This is a dummy item and dummy Description here...continue adding the description".text.color(darkFontGrey).make(),
+
+                  //buttons sections
+                  ListView(
+                    shrinkWrap: true,
+                    children: List.generate(5, (index) => ListTile(
+                      title: "Video".text.fontFamily(semibold).color(darkFontGrey).make(),
+                      trailing: const Icon(Icons.arrow_forward),
+                    )),
+                  ),
                 ],
               ),
             ),
