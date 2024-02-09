@@ -1,11 +1,11 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:emart_app/views/cart_screen/cart_screen.dart';
-import 'package:emart_app/views/controllers/home_controller.dart';
 import 'package:emart_app/views/home_screen/home_screen.dart';
 import 'package:emart_app/views/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../controllers/home_controller.dart';
 import '../category_screen/category_screen.dart';
 
 class Home extends StatelessWidget {
