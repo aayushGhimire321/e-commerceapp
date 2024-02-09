@@ -7,6 +7,9 @@ import 'package:get/get.dart';
 import '../consts/firebase_consts.dart';
 
 class AuthController extends GetxController {
+
+  var isloading = false.obs;
+
   //text controller
   var emailController = TextEditingController();
   var passwordController = TextEditingController();

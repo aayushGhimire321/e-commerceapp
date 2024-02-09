@@ -1,4 +1,5 @@
 import 'package:emart_app/consts/consts.dart';
+import 'package:emart_app/views/profile_screen/edit_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -25,7 +26,9 @@ class ProfileScreen extends StatelessWidget {
                 child: const Align(
                         alignment: Alignment.topRight,
                         child: Icon(Icons.edit, color: whiteColor))
-                    .onTap(() {}),
+                    .onTap(() {
+                      Get.to(()=> const EditProfileScreen());
+                }),
               ),
 
               //users details sections
@@ -33,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Row(
                   children: [
-                    Image.asset(imgProfile, width: 100, fit: BoxFit.cover)
+                    Image.asset(imgProfile2, width: 100, fit: BoxFit.cover)
                         .box
                         .roundedFull
                         .clip(Clip.antiAlias)
